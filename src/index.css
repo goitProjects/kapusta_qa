@@ -1,0 +1,112 @@
+@import-normalize; /* bring in normalize.css styles */
+
+:root {
+  --accent-color: #ff751d;
+  --minus-balance-color: #e7192e;
+
+  --font-family: 'Roboto', sans-serif;
+  --primary-font-size: 12px;
+}
+
+html[data-theme='day'] {
+  --plus-balance-color: #407946;
+  --black-text-color: #000;
+  --primary-text-color: #52555f;
+  --white-color: #fff;
+  --description-color: #c7ccdc;
+  --bg-color: #f5f6fb;
+  --table-color: #f5f6fb;
+  --table-line: #f5f6fb;
+  --add-bg-color: #fff;
+  --input-bg-color: #fff;
+  --active-link-bg: #fefefe;
+  --not-active-link-bg: #fafbfd;
+  --border-light: #f6f7fc;
+  --text-with-opacity: rgba(82, 85, 95, 0.7);
+
+  --calsIcon: url('./assets/icons/transactionCalculator.svg');
+}
+
+html[data-theme='night'] {
+  --plus-balance-color: #06ff1f;
+  --black-text-color: #fff;
+  --primary-text-color: #fff;
+  --white-color: rgb(6, 6, 31);
+  --description-color: #f6f6f6;
+  --bg-color: #27282d;
+  --table-color: #60646d;
+  --add-bg-color: #4b4e55;
+  --table-line: #fff;
+  --input-bg-color: #60646d;
+  --active-link-bg: #60646d;
+  --not-active-link-bg: #4b4e55;
+  --border-light: #fff;
+  --text-with-opacity: #fff;
+
+  --calsIcon: url('./assets/icons/transactionCalculatorNight.svg');
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  width: 1280px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--white-color);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  /* line-height: 0; */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+}
+
+.container_transactions {
+  max-width: 1098px;
+  background-color: var(--add-bg-color);
+  height: 579px;
+  margin: 0 auto;
+  padding: 32px;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 0px 30px 30px 30px;
+}

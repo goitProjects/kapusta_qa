@@ -1,0 +1,73 @@
+.expensesText {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #e7192e;
+}
+.listmob {
+  padding: 0 10px;
+}
+.incomesText {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #407946;
+}
+.itemLi {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f6fb;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+.title {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.16;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  margin-bottom: 5px;
+  color: var(--primary-text-color);
+}
+.infoText {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.date {
+  margin-right: 10px;
+}
+
+.smallinfoText {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 9px;
+  letter-spacing: 0.04em;
+  color: var(--primary-text-color);
+}
+.buttonDeletemob {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: 50%;
+  margin: 0px 10px;
+  background-image: url('../../assets/icons/deleteTransaction.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 20px;
+  background-color: transparent;
+}

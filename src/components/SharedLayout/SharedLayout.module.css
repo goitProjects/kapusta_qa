@@ -1,0 +1,194 @@
+.sectionHome {
+  display: flex;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 110px;
+
+  width: 100%;
+  height: 526px;
+}
+.BottomHomeCabaggeMain {
+  width: 100%;
+}
+.bottomSection {
+  height: 486px;
+  padding-top: 308px;
+
+  background-repeat: no-repeat;
+  background-position: top 600px left 230px;
+  background-image: url('../../assets/images/cabbageVectorBottom.png');
+}
+.background {
+  background-image: url('../../assets/images/cabbageVector.png');
+  background-position: center;
+  background-position-y: 30px;
+  display: flex;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+.BottomHomeCabagge {
+  background-image: url('../../assets/images/cabbageVector.png');
+  background-repeat: no-repeat;
+  background-position: top 600px left 10px, center;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  position: absolute;
+}
+.backgroundHome {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.section {
+  display: flex;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom-left-radius: 110px;
+
+  width: 100%;
+  height: 526px;
+}
+
+.title {
+  margin: 0 157px 0 229px;
+  font-weight: 900;
+  font-size: 102px;
+  line-height: 1.17;
+  position: relative;
+  color: var(--black-text-color);
+}
+.title::after {
+  content: '';
+  width: 8px;
+  height: 13px;
+  background-color: var(--black-text-color);
+  position: absolute;
+  top: 26px;
+  left: 256px;
+}
+.title::before {
+  content: '';
+  width: 8px;
+  height: 13px;
+  background-color: var(--black-text-color);
+  position: absolute;
+  top: 95px;
+  left: 257px;
+}
+
+.tittleText {
+  margin: 10px 0 0 301px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .container {
+    max-width: 768px;
+  }
+  .section {
+    display: inline-block;
+  }
+  .BottomHomeCabagge {
+    background-image: url('../../assets/images/cabbageVectorBottom.png');
+    background-repeat: no-repeat;
+    background-position: top 970px left 500px;
+    background-size: auto;
+    height: 1175px;
+  }
+  .background {
+    position: relative;
+    display: block;
+    background-image: url('../../assets/images/cabbageVector.png');
+    background-repeat: no-repeat;
+    background-position-x: 21px;
+  }
+  .bottomSection {
+    height: 850px;
+    background-position: top 770px left 103px;
+    padding-top: 80px;
+    background-repeat: no-repeat;
+  }
+  .title {
+    margin-left: 171px;
+    font-size: 67px;
+  }
+  .tittleText {
+    font-size: 16px;
+    margin: 0 0 80px 205px;
+  }
+  .title::after {
+    width: 7px;
+    height: 11px;
+    top: 18px;
+    left: 167px;
+  }
+  .title::before {
+    width: 7px;
+    height: 11px;
+    top: 60px;
+    left: 167px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .container {
+    max-width: 320px;
+  }
+  .background {
+    position: relative;
+    display: block;
+    background-image: url('../../assets/images/cabbageVector.png');
+    background-repeat: no-repeat;
+    background-position-x: 230px;
+    flex-direction: column;
+  }
+  .BottomHomeCabagge {
+    background-image: none;
+  }
+  .section {
+    padding-top: 0px;
+    height: 260px;
+    display: inline-block;
+  }
+  .sectionHome {
+    height: 260px;
+  }
+  .bottomSection {
+    background-image: url('../../assets/images/svg/cabbage.svg');
+    background-position: top 790px left 35px;
+    padding-top: 86px;
+    height: 800px;
+  }
+  .title {
+    font-size: 40px;
+    margin: 0 0 0 20px;
+  }
+  .tittleText {
+    font-size: 13px;
+    margin: 0 0 50px 31px;
+  }
+  .title::after {
+    width: 4px;
+    height: 6px;
+    top: 11px;
+    left: 100px;
+  }
+  .title::before {
+    width: 4px;
+    height: 6px;
+    top: 36px;
+    left: 100px;
+  }
+}

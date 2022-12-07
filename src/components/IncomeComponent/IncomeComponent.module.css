@@ -1,0 +1,178 @@
+.transactions {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+}
+
+.timeDiv {
+  /* width: 104px; */
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.linkContainer {
+  display: flex;
+}
+
+.link {
+  background-color: #fafbfd;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--black-text-color);
+  padding: 13px 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.activeLink {
+  background-color: #fefefe;
+  color: #ff751d;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 13px 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.date {
+  margin-left: 10px;
+  color: var(--primary-text-color);
+  width: 74px;
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* .rasta-stripes {
+    border: none;
+    color: red;
+      color: var(--primary-text-color);
+} */
+
+.input {
+  width: 290px;
+  padding-left: 10px;
+  height: 44px;
+
+  border: 2px solid var(--border-light);
+  border-right: none;
+  border-radius: 16px 0px 0px 0px;
+}
+
+.select {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  letter-spacing: 0.02em;
+
+  color: #c7ccdc;
+}
+
+.calcInput {
+  color: #c7ccdc;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-align: right;
+  /* padding-left: 85px; */
+  padding-right: 41px;
+  width: 121px;
+  height: 44px;
+  border: 2px solid var(--border-light);
+  border-left: 0px;
+  border-radius: 0px 16px 16px 0px;
+  background-image: url('../../assets/icons/transactionCalculator.svg');
+  background-repeat: no-repeat;
+  background-position: 87% 50%;
+  background-size: 20px;
+}
+
+.buttonInput {
+  width: 136px;
+  padding: 12px 37px;
+  margin-left: 32px;
+  margin-right: 16px;
+
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--white-color);
+  background: #ff751d;
+  border-radius: 16px;
+}
+
+.buttonClear {
+  width: 136px;
+  padding: 12px 37px;
+
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--primary-text-color);
+  background: var(--white-color);
+  border-radius: 16px;
+  border: 2px solid var(--border-light);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .transactions {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+}
+
+@media screen and (min-width: 1281px) {}

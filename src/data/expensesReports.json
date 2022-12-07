@@ -1,0 +1,16 @@
+{
+  "Продукты": { "title": "Products", "id": "icon-products" },
+  "Алкоголь": { "title": "Alcohol", "id": "icon-alcohol" },
+  "Развлечения": { "title": "Entertainment", "id": "icon-entertainment" },
+  "Здоровье": { "title": "Health", "id": "icon-health" },
+  "Транспорт": { "title": "Transport", "id": "icon-transport" },
+  "Всё для дома": { "title": "Housing", "id": "icon-housing" },
+  "Техника": { "title": "Technique", "id": "icon-technique" },
+  "Коммуналка и связь": {
+    "title": "Communal, communication",
+    "id": "icon-communal, communication"
+  },
+  "Спорт и хобби": { "title": "Sports, hobbies", "id": "icon-sports, hobbies" },
+  "Образование": { "title": "Education", "id": "icon-education" },
+  "Прочее": { "title": "Other", "id": "icon-other" }
+}

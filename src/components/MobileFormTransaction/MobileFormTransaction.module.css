@@ -1,0 +1,11 @@
+.btnPrevPagemob {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background-image: url('../../assets/images/svg/array_back.svg');
+  background-repeat: no-repeat;
+  margin: 16px 0 16px 20px;
+}

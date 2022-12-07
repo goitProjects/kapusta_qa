@@ -1,0 +1,243 @@
+.balance {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 8px; */
+}
+
+@media screen and (max-width: 767.9px) {
+  .balance {
+    display: block;
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 37px;
+  }
+}
+
+.label {
+  position: relative;
+  display: flex;
+  width: 125px;
+  height: 44px;
+  margin-right: 16px;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  align-items: center;
+}
+
+@media screen and (max-width: 767.9px) {
+  .label {
+    width: 140px;
+    height: 40px;
+    margin-right: 0;
+
+    border-right: 1px;
+    border-radius: 22px 0px 0px 22px;
+    border: 2px solid #fff;
+  }
+}
+
+.title {
+  margin-right: 20px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--text-with-opacity);
+}
+
+@media screen and (max-width: 767.9px) {
+  .title {
+    margin-bottom: 8px;
+    margin-right: 0;
+    justify-content: center;
+  }
+}
+.titleMobile {
+  margin-left: 70px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--text-with-opacity);
+}
+
+.money {
+  margin-right: 20px;
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+
+  color: var(--black-text-color);
+}
+
+.moneyMobile {
+  display: inline-flex;
+  margin-right: 14px;
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+
+  color: var(--black-text-color);
+}
+
+.info {
+  display: flex;
+}
+
+.input {
+  position: relative;
+  top: 1px;
+
+  font-size: 13px;
+  width: 68px;
+  height: 20px;
+  margin-left: 8px;
+  margin-right: 2px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+
+  color: var(--black-text-color);
+  background-color: transparent;
+}
+
+.inputMobile {
+  position: relative;
+  font-weight: 700;
+  top: 0px;
+  margin-right: 2px;
+  font-size: 12px;
+  line-height: 14px;
+  width: 68px;
+  height: 20px;
+  border: none;
+  outline: none;
+  text-align: right;
+  align-items: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: var(--black-text-color);
+  background-color: transparent;
+}
+
+.button {
+  width: 125px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-with-opacity);
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: auto;
+}
+
+@media screen and (max-width: 767.9px) {
+  .button {
+    width: 140px;
+    height: 44px;
+
+    /* border-left: 1px; */
+    border-radius: 0px 22px 22px 0px;
+  }
+}
+
+.labelMobile {
+  width: 183px;
+  height: 44px;
+
+  border: 2px solid #fff;
+  border-radius: 22px;
+}
+
+.buttonActive {
+  composes: button;
+  cursor: pointer;
+}
+
+.buttonActive:hover {
+  color: var(--white-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.1), 3px 3px 1px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.12);
+}
+
+.buttonNone {
+  display: none;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 450px;
+  width: 125px;
+  height: 44px;
+  margin-right: 16px;
+  border: 2px solid var(--white-color);
+  border-radius: 16px;
+  /* align-items: center; */
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.reportsLinkWrapper {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .reportsLinkWrapper {
+    margin-left: 251px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reportsLinkWrapper {
+    margin-left: 298px;
+  }
+}
+
+.reports {
+  color: var(--primary-text-color);
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.iconReports {
+  fill: var(--primary-text-color);
+  margin-left: 15px;
+}

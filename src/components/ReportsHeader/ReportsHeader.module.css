@@ -1,0 +1,153 @@
+.block {
+  width: 1034px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+@media screen and (max-width: 767.9px) {
+  .block {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .block {
+    width: 704px;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
+  .block {
+    flex-direction: column;
+    width: 280px;
+  }
+}
+
+.reportsSection {
+  display: flex;
+}
+
+@media screen and (max-width: 767.9px) {
+  .reportsSection {
+    flex-direction: column-reverse;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 249px;
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    margin-right: 155px;
+  }
+}
+
+.blockMonth {
+  display: block;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .blockMonth {
+    margin-left: 90px;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
+  .blockMonth {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.btnPrevPage {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  background-image: url('../../assets/images/svg/array_back.svg');
+  background-repeat: no-repeat;
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 767.9px) {
+  .btnPrevPage {
+    margin-right: 108px;
+    margin-bottom: 16px;
+  }
+}
+
+.mainPage {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+
+  color: var(--text-with-opacity);
+}
+
+@media screen and (max-width: 767.9px) {
+  .mainPage {
+    display: none;
+  }
+}
+
+.prevBtn {
+  display: block;
+  width: 10px;
+  height: 14px;
+  background-color: transparent;
+  border: none;
+  background-image: url('../../assets/images/svg/array_left.svg');
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+.prevBtn:disabled,
+.nextBtn:disabled {
+  cursor: auto;
+}
+
+.nextBtn {
+  display: block;
+  width: 10px;
+  height: 14px;
+  background-color: transparent;
+  background-image: url('../../assets/images/svg/array_right.svg');
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  border: none;
+}
+.nextBtn:active {
+  background-color: transparent;
+}
+
+.notActiveBtn {
+  display: none;
+}
+
+.currentPeriod {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+
+  color: var(--text-with-opacity);
+
+  text-align: center;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,71 @@
+.table {
+  width: 780px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+
+  border-collapse: collapse;
+}
+
+.table thead tr th:first-child {
+  border-radius: 20px 0 0 0;
+}
+
+.table thead tr th:last-child {
+  border-radius: 0 20px 0 0;
+}
+
+.table th {
+  height: 40px;
+
+  font-weight: bold;
+  padding: 5px;
+  color: var(--black-text-color);
+  background-color: var(--table-color);
+  /* border: 1px solid #dddddd; */
+}
+
+.table td {
+  /* background-color: #fff; */
+  height: 40px;
+  border-bottom: 2px solid var(--table-line);
+
+  /* border: 1px solid #dddddd; */
+  color: var(--primary-text-color);
+  padding: 5px;
+  text-align: center;
+}
+
+.buttonDelete {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: 50%;
+  margin: 0px 10px;
+  background-image: url('../../assets/icons/deleteTransaction.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 20px;
+}
+
+.expenses {
+  color: #e7192e;
+  font-weight: bold;
+}
+
+.incomes {
+  color: #407946;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .table {
+    width: 635px;
+    margin-top: 48px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+}
