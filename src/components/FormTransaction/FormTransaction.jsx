@@ -1,15 +1,15 @@
-import { useDispatch } from 'react-redux';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from 'react-responsive';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
-import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 import 'react-datepicker/dist/react-datepicker.css';
-import s from './FormTransaction.module.css';
-import { toast } from 'react-toastify';
-import { useMediaQuery } from 'react-responsive';
-import { useNavigate } from 'react-router-dom';
 import Sprite from '../../assets/images/svg/sprite.svg';
+import s from './FormTransaction.module.css';
 
 const colourStyles = {
   control: styles => ({
@@ -62,13 +62,15 @@ const colourStylesMob = {
 };
 
 const FormTransaction = ({ operation, options, date, setDate }) => {
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState(null);
-  const [amount, setAmount] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
+
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState(null);
+  const [amount, setAmount] = useState('');
+
   const handleChange = e => {
     const { value } = e.target;
     setDescription(value);
@@ -117,7 +119,7 @@ const FormTransaction = ({ operation, options, date, setDate }) => {
           dateFormat="dd.MM.yyyy"
           className={s.date}
           selected={date}
-          onChange={(date: Date) => setDate(date)}
+          onChange={date => setDate(date)}
         />
       </div>
 

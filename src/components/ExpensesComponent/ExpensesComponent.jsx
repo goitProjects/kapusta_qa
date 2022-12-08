@@ -17,20 +17,27 @@ import s from './ExpensesComponent.module.css';
 import { getEmailUser } from 'redux/auth/AuthSelector';
 import { useTranslation } from 'react-i18next';
 
+const getStartYearDate = () => {
+  return new Date(2001, 0, 1);
+};
+
 const ExpensesComponent = () => {
-  const [date, setDate] = useState(new Date());
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+
   const loading = useSelector(isLoading);
   const email = useSelector(getEmailUser);
   const monthStats = useSelector(expensesStats);
   const transactions = useSelector(getExpensesTransactions);
-  const dispatch = useDispatch();
-  const { t } = useTranslation();
+
+  // set starting date 2001-01-01
+  const [date, setDate] = useState(getStartYearDate());
+
   const expensesCategArray = t('expensesCategArray', { returnObjects: true });
 
   useEffect(() => {
     if (email && transactions.length === 0) dispatch(getExpenseTransaction());
-    // eslint-disable-next-line
-  }, [transactions.length, email]);
+  }, [dispatch, transactions.length, email]);
 
   return (
     <>
