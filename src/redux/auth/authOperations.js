@@ -42,10 +42,10 @@ export const logoutUser = createAsyncThunk(
       return;
     } catch (error) {
       setTimeout(() => {
-        if (error.response.status === 404) {
-          dispatch(logoutUserAction());
-        } else {
+        if (error.response.status === 401) {
           dispatch(errorHandler({ error, cb: logoutUser }));
+        } else {
+          dispatch(logoutUserAction());
         }
       }, 0);
       return rejectWithValue(error.message);
