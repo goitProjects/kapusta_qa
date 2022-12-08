@@ -110,7 +110,7 @@ export const Balance = () => {
             (expenses.length === 0) & (incomes.length === 0) ? (
               <BalanceModal />
             ) : (
-              !(<BalanceModal />)
+              <BalanceModal />
             )}
           </label>
 
