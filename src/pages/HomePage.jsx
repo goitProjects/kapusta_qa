@@ -5,7 +5,7 @@ import HomeNavigation from 'components/HomeNavigation/HomeNavigation';
 import { useMediaQuery } from 'react-responsive';
 
 import MobileTransactionList from '../components/MobileTransactionList/MobileTransactionList';
-import DataPicker from '../components/DatePicker/DatePickerComp';
+import DatePickerComp from '../components/DatePicker/DatePickerComp';
 import MobileFormTransaction from '../components/MobileFormTransaction/MobileFormTransaction';
 
 const HomePage = () => {
@@ -13,11 +13,11 @@ const HomePage = () => {
 
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
   const location = useLocation();
+
   useEffect(() => {
     if (!isMobile) {
       navigate('expenses');
     }
-
     // eslint-disable-next-line
   }, [isMobile]);
   return (
@@ -30,7 +30,7 @@ const HomePage = () => {
           <>
             <DataHeader />
             <HomeNavigation />
-            <DataPicker />
+            <DatePickerComp />
             <MobileTransactionList />
           </>
         )

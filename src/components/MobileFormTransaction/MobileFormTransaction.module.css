@@ -1,6 +1,7 @@
 .btnPrevPagemob {
   display: block;
   position: absolute;
+  z-index: 2;
   width: 24px;
   height: 24px;
   background-color: transparent;

@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
+import moment from 'moment';
+import { useFormik } from 'formik';
 import PropTypes from 'prop-types';
-import { toast } from 'react-toastify';
 import Select from 'react-select';
+import { clsx } from 'clsx';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import { validationSchema, initialValues } from './utils';
 import Sprite from '../../assets/images/svg/sprite.svg';
 import s from './FormTransaction.module.css';
 
@@ -61,105 +65,131 @@ const colourStylesMob = {
   }),
 };
 
-const FormTransaction = ({ operation, options, date, setDate }) => {
+const FormTransaction = ({ operation, options, setDate }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const { t } = useTranslation();
   const isMobile = useMediaQuery({ query: '(max-width: 767.9px)' });
+  const isIncome = pathname.includes('income');
 
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState(null);
-  const [amount, setAmount] = useState('');
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values, { setValues }) => {
+      const { date, amount, category, description } = values;
+      const complitedTransaction = {
+        description,
+        date: moment(date).format('YYYY-MM-DD'),
+        category: category?.value,
+        amount: Number(amount),
+      };
+      dispatch(operation(complitedTransaction));
+      // кинуть в useEffect на зміну транзакцій
+      if (isMobile) {
+        navigate('transactions');
+      }
+      setValues(initialValues);
+    },
+  });
 
-  const handleChange = e => {
-    const { value } = e.target;
-    setDescription(value);
-  };
-
-  const handleChangeAmount = e => {
-    const { value } = e.target;
-    setAmount(value);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    if (category === null) {
-      return toast.error(t('transactions.categoryInfo'), {
-        autoClose: 2000,
-        theme: 'colored',
-      });
-    }
-    const initialForm = {
-      description,
-      amount: Number(amount),
-      date: date.toISOString().slice(0, 10),
-      category: category.value,
-    };
-    dispatch(operation(initialForm));
-    if (isMobile) {
-      navigate('transactions');
-    }
-  };
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+    setValues,
+  } = formik;
 
   const reset = () => {
-    setDate(new Date());
-    setDescription('');
-    setCategory(null);
-    setAmount('');
+    setValues(initialValues);
   };
+
+  const handleAmountChange = e => {
+    const { value } = e.target;
+    if (value === '' || value.match(/^[1-9]\d*$/)) {
+      setFieldValue('amount', value);
+    }
+  };
+
+  useEffect(() => {
+    setDate(values.date);
+  }, [values.date, setDate]);
 
   return (
     <form onSubmit={handleSubmit} className={s.form}>
-      <div className={s.timeDiv}>
+      <label className={clsx(s.timeDiv, s.position)}>
         <svg className={s.calendarIcon} width="90" height="31">
           <use href={`${Sprite}#icon-calendar`}></use>
         </svg>
         <DatePicker
           dateFormat="dd.MM.yyyy"
           className={s.date}
-          selected={date}
-          onChange={date => setDate(date)}
+          selected={values.date}
+          onChange={date => setFieldValue('date', date)}
         />
-      </div>
+      </label>
 
-      <label className={s.label}>
+      <label className={clsx(s.label, s.position)}>
         <input
           className={s.input}
           type="text"
           name="description"
           placeholder={t('transactions.prodDescr')}
-          required
-          value={description}
+          value={values.description}
           onChange={handleChange}
         />
+        {!isIncome && (
+          <ErrorMessage
+            touched={touched}
+            errors={errors}
+            name="description"
+            className={s.errorMessage}
+          />
+        )}
       </label>
-      <Select
-        className={s.select}
-        styles={isMobile ? colourStylesMob : colourStyles}
-        placeholder={t('transactions.prodCateg')}
-        value={category}
-        onChange={setCategory}
-        options={options}
-      />
-      <label>
+
+      <div className={clsx(s.position, s.flex)}>
+        <Select
+          className={s.select}
+          styles={isMobile ? colourStylesMob : colourStyles}
+          placeholder={t('transactions.prodCateg')}
+          value={values.category}
+          options={options}
+          onChange={option => setFieldValue('category', option)}
+        />
+        <ErrorMessage
+          touched={touched}
+          errors={errors}
+          name="category"
+          className={s.errorMessage}
+        />
+      </div>
+
+      <label className={clsx(s.position)}>
         <input
           className={s.calcInput}
-          type="number"
-          name="number"
+          type="text"
+          name="amount"
           min="0"
-          pattern="^[1-9]\d*$"
-          required
           placeholder="0,00"
-          value={amount}
-          onChange={handleChangeAmount}
+          value={values.amount}
+          onChange={handleAmountChange}
+        />
+        <ErrorMessage
+          touched={touched}
+          errors={errors}
+          name="amount"
+          className={s.errorMessageAmount}
         />
       </label>
+
       <div className={s.buttonList}>
-        {' '}
         <button type="submit" className={s.buttonInput}>
           {t('transactions.input')}
-        </button>{' '}
+        </button>
         <button type="button" className={s.buttonClear} onClick={reset}>
           {t('transactions.clear')}
         </button>

@@ -2,6 +2,14 @@
   display: flex;
 }
 
+.position {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
 .timeDiv {
   margin-right: 32px;
   display: flex;
@@ -82,13 +90,9 @@
 .buttonList {
   display: flex;
 }
-.buttonInput {
-  width: 136px;
-  padding: 12px 37px;
-  margin-left: 32px;
-  margin-right: 16px;
 
-  border: none;
+.buttonInput,
+.buttonClear {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -97,9 +101,18 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  border-radius: 16px;
+}
+
+.buttonInput {
+  width: 136px;
+  padding: 12px 37px;
+  margin-left: 32px;
+  margin-right: 16px;
+
   color: #fff;
   background: #ff751d;
-  border-radius: 16px;
+  border: none;
 }
 
 .buttonClear {
@@ -109,18 +122,8 @@
   width: 136px;
   padding: 12px 37px;
 
-  border: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: var(--primary-text-color);
   background-color: transparent;
-  border-radius: 16px;
   border: 2px solid var(--border-light);
 }
 
@@ -161,6 +164,24 @@
   }
 }
 @media screen and (max-width: 767.9px) {
+  .flex {
+    width: 280px;
+    margin: 0 auto;
+  }
+  p.errorMessageAmount,
+  p.errorMessage {
+    top: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px;
+  }
+  p.errorMessage {
+    top: unset;
+    bottom: 3px;
+  }
+  p.errorMessageAmount {
+    top: 84px;
+  }
   .timeDiv {
     display: none;
   }

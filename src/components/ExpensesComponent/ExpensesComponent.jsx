@@ -16,10 +16,8 @@ import TransactionList from 'components/TransactionList/TransactionList';
 import s from './ExpensesComponent.module.css';
 import { getEmailUser } from 'redux/auth/AuthSelector';
 import { useTranslation } from 'react-i18next';
-
-const getStartYearDate = () => {
-  return new Date(2001, 0, 1);
-};
+import moment from 'moment';
+import { useMemo } from 'react';
 
 const ExpensesComponent = () => {
   const dispatch = useDispatch();
@@ -30,10 +28,11 @@ const ExpensesComponent = () => {
   const monthStats = useSelector(expensesStats);
   const transactions = useSelector(getExpensesTransactions);
 
-  // set starting date 2001-01-01
-  const [date, setDate] = useState(getStartYearDate());
+  const [date, setDate] = useState(() => new Date());
 
   const expensesCategArray = t('expensesCategArray', { returnObjects: true });
+
+  const choisedDate = useMemo(() => moment(date).format('YYYY-MM-DD'), [date]);
 
   useEffect(() => {
     if (email && transactions.length === 0) dispatch(getExpenseTransaction());
@@ -44,15 +43,13 @@ const ExpensesComponent = () => {
       <FormTransaction
         operation={addExpenseTransaction}
         options={expensesCategArray}
-        date={date}
+        // date={date}
         setDate={setDate}
       />
       <div className={s.transactions}>
         <TransactionList
           location="expenses"
-          transactionsArray={transactions.filter(
-            el => el.date === date.toISOString().slice(0, 10)
-          )}
+          transactionsArray={transactions.filter(el => el.date === choisedDate)}
         />
         <Summary monthStats={monthStats} />
       </div>

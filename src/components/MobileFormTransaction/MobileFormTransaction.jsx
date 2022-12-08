@@ -1,15 +1,16 @@
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FormTransaction from 'components/FormTransaction/FormTransaction';
 import optionsExpense from '../../data/expensesForm.json';
-import optionsIncome from '../../data/incomeForm.json';
-import { useLocation, useNavigate } from 'react-router-dom';
 import {
   addExpenseTransaction,
   addIncomeTransaction,
 } from '../../redux/transaction/transaction-operations';
+import optionsIncome from '../../data/incomeForm.json';
 import s from './MobileFormTransaction.module.css';
-import { useState } from 'react';
+
 const MobileFormTransaction = () => {
-  const [date, setDate] = useState(new Date());
+  const [, setDate] = useState(new Date());
   const navigate = useNavigate();
   const location = useLocation();
   return (
@@ -22,7 +23,7 @@ const MobileFormTransaction = () => {
         <FormTransaction
           operation={addExpenseTransaction}
           options={optionsExpense}
-          date={date}
+          // date={date}
           setDate={setDate}
         />
       )}
@@ -31,7 +32,7 @@ const MobileFormTransaction = () => {
         <FormTransaction
           operation={addIncomeTransaction}
           options={optionsIncome}
-          date={date}
+          // date={date}
           setDate={setDate}
         />
       )}
