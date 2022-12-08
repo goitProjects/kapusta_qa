@@ -2,7 +2,6 @@
   "name": "kapusta-qa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kapusta-qa.goit.global/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.3",
@@ -16,6 +15,7 @@
     "i18next-http-backend": "^1.4.1",
     "moment": "^2.29.4",
     "nanoid": "^4.0.0",
+    "netlify-cli": "^12.2.9",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-avatar": "^5.0.3",
@@ -43,7 +43,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:js": "eslint src/**/*.{js,jsx}"
+    "lint:js": "eslint src/**/*.{js,jsx}",
+    "predeploy": "npm run build",
+    "deploy": "netlify deploy -p"
   },
   "eslintConfig": {
     "extends": [
