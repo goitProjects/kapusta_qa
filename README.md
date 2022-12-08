@@ -1,6 +1,5 @@
-#### [back to main branch](https://github.com/goitProjects/students_projects/)
+# Kapusta_QA_App
 
-# Kapusta_project
 Цей [додаток](https://kapusta-qa.netlify.app/) був реалізований для студентів курсів QA, щоб вони за допомогою нього могли тренуватися знаходити і оформляти баги.
 
 ## Перелік доданих багів:
